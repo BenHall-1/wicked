@@ -1,0 +1,149 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2022-05-31T21:34:35+01:00",
+    "name": "WICKED",
+    "author": "ben@benh.codes",
+    "description": null,
+    "features": null,
+    "images": [
+        "ghcr.io\/benhall-1\/wicked:main"
+    ],
+    "file_denylist": [],
+    "startup": "\/root\/wicked",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Bot is now running. Press CTRL-C to exit.\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": null,
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Discord Bot Token",
+            "description": "Discord Bot Token",
+            "env_variable": "DISCORD_BOT_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Discord Staff Server Id",
+            "description": "Discord Staff Server Id",
+            "env_variable": "DISCORD_STAFF_SERVER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Discord Main Server Id",
+            "description": "The server id for the main server",
+            "env_variable": "DISCORD_MAIN_SERVER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Discord Logs Channel Id",
+            "description": "The channel Id for the logs to be posted in",
+            "env_variable": "DISCORD_LOGS_CHANNEL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Discord Art Channel Id",
+            "description": "The channel Id for the art to be detected in",
+            "env_variable": "DISCORD_ART_CHANNEL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Discord Mod Role Id",
+            "description": "The role Id for the mod role",
+            "env_variable": "DISCORD_MOD_ROLE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Database Host",
+            "description": "",
+            "env_variable": "DB_HOST",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Database Port",
+            "description": "",
+            "env_variable": "DB_PORT",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer"
+        },
+        {
+            "name": "Database User",
+            "description": "",
+            "env_variable": "DB_USER",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Database Password",
+            "description": "",
+            "env_variable": "DB_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Database Name",
+            "description": "",
+            "env_variable": "DB_NAME",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Database SSL Mode",
+            "description": "",
+            "env_variable": "DB_SSL_MODE",
+            "default_value": "disable",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        },
+        {
+            "name": "Database Time Zone",
+            "description": "",
+            "env_variable": "DB_TIMEZONE",
+            "default_value": "Europe\/London",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string"
+        }
+    ]
+}
