@@ -17,7 +17,9 @@ type ImageUploaded struct {
 
 func GetAllImagesUploadedByHash(hash string) []ImageUploaded {
 	var previousImages []ImageUploaded
-	if err := db.Database.Select(&previousImages, "SELECT * FROM images_uploaded WHERE image_hash = ?", hash); err != nil {
+	query := "SELECT * FROM images_uploaded WHERE image_hash = '%s'"
+	query = fmt.Sprintf(query, utils.EscapeSpecialCharacters(hash))
+	if err := db.Database.Select(&previousImages, query); err != nil {
 		fmt.Println(err)
 		return nil
 	}
