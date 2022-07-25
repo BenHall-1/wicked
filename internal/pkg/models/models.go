@@ -26,7 +26,10 @@ func GetAllImagesUploadedByHash(hash string) []ImageUploaded {
 }
 
 func AddImageUpload(userId, messageId, imageHash string) {
-	if _, err := db.Database.Exec("INSERT INTO images_uploaded (user_id, message_id, image_hash) VALUES (?, ?, '?')", userId, messageId, utils.EscapeSpecialCharacters(imageHash)); err != nil {
+	query := "INSERT INTO images_uploaded (user_id, message_id, image_hash) VALUES ('%s', '%s', '%s')"
+	query = fmt.Sprintf(query, userId, messageId, utils.EscapeSpecialCharacters(imageHash))
+	fmt.Println(query)
+	if _, err := db.Database.Exec(query); err != nil {
 		fmt.Println(err)
 	}
 }
