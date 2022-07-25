@@ -5,7 +5,31 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 )
+
+func EscapeSpecialCharacters(value string) string {
+	replace := []struct {
+		raw  string
+		safe string
+	}{
+		{"\\", "\\\\"},   // backslash
+		{"'", `\'`},      // single quote
+		{`"`, `\"`},      // double quote
+		{"\n", "\\n"},    // new line
+		{"\r", "\\r"},    // carriage return
+		{"\\0", "\\\\0"}, // null
+		{"\x1a", "\\Z"},  // control+Z
+		{"\x08", "\\b"},  // backspace
+		{"%", "\\%"},     // %
+	}
+
+	for _, str := range replace {
+		value = strings.Replace(value, str.raw, str.safe, -1)
+	}
+
+	return value
+}
 
 func GetBase64FromUrl(url string) string {
 	response, err := http.Get(url)

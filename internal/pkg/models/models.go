@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/benhall-1/wicked/internal/pkg/db"
+	"github.com/benhall-1/wicked/internal/pkg/utils"
 )
 
 type ImageUploaded struct {
@@ -25,7 +26,7 @@ func GetAllImagesUploadedByHash(hash string) []ImageUploaded {
 }
 
 func AddImageUpload(userId, messageId, imageHash string) {
-	if _, err := db.Database.Exec("INSERT INTO images_uploaded (user_id, message_id, image_hash) VALUES (?, ?, '?')", userId, messageId, imageHash); err != nil {
+	if _, err := db.Database.Exec("INSERT INTO images_uploaded (user_id, message_id, image_hash) VALUES (?, ?, '?')", userId, messageId, utils.EscapeSpecialCharacters(imageHash)); err != nil {
 		fmt.Println(err)
 	}
 }
