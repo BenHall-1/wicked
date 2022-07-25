@@ -38,7 +38,7 @@ func (c BreakRoleCommand) HandleCommand(s *discordgo.Session, i *discordgo.Inter
 							Emoji: discordgo.ComponentEmoji{
 								ID: "981140032658223124",
 							},
-							CustomID: "break_role_button",
+							CustomID: "createbreakrolemenu-break_role_button",
 						},
 						discordgo.Button{
 							Style: discordgo.DangerButton,
@@ -46,7 +46,7 @@ func (c BreakRoleCommand) HandleCommand(s *discordgo.Session, i *discordgo.Inter
 							Emoji: discordgo.ComponentEmoji{
 								ID: "981140032658223124",
 							},
-							CustomID: "remove_break_role_button",
+							CustomID: "createbreakrolemenu-remove_break_role_button",
 						},
 					},
 				},
@@ -61,7 +61,7 @@ func (c BreakRoleCommand) HandleComponents(s *discordgo.Session, i *discordgo.In
 			s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseModal,
 				Data: &discordgo.InteractionResponseData{
-					CustomID: "break_role_modal",
+					CustomID: "createbreakrolemenu-break_role_modal",
 					Title:    "Get The Break Role",
 					Components: []discordgo.MessageComponent{
 						discordgo.ActionsRow{
@@ -100,8 +100,7 @@ func (c BreakRoleCommand) HandleComponents(s *discordgo.Session, i *discordgo.In
 					Flags:   1 << 6,
 				},
 			})
-			s.GuildMemberRoleRemove(os.Getenv("DISCORD_STAFF_SERVER_ID"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_STAFF_SERVER_BREAK_ID"))
-			s.GuildMemberRoleRemove(os.Getenv("DISCORD_MAIN_SERVER_ID"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_MAIN_SERVER_BREAK_ID"))
+			s.GuildMemberRoleRemove(os.Getenv("DISCORD_STAFF_SERVER"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_BREAK_ROLE"))
 		},
 	}
 }
@@ -140,8 +139,7 @@ func (c BreakRoleCommand) HandleModals(s *discordgo.Session, i *discordgo.Intera
 					},
 				},
 			}
-			s.GuildMemberRoleAdd(os.Getenv("DISCORD_STAFF_SERVER_ID"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_STAFF_SERVER_BREAK_ID"))
-			s.GuildMemberRoleAdd(os.Getenv("DISCORD_MAIN_SERVER_ID"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_MAIN_SERVER_BREAK_ID"))
+			s.GuildMemberRoleAdd(os.Getenv("DISCORD_STAFF_SERVER"), i.Interaction.Member.User.ID, os.Getenv("DISCORD_BREAK_ROLE"))
 
 			s.ChannelMessageSendComplex(os.Getenv("DISCORD_BREAK_LOG_CHANNEL_ID"), &discordgo.MessageSend{
 				Embeds:  []*discordgo.MessageEmbed{embed},

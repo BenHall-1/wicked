@@ -47,6 +47,24 @@
             "rules": "required|string|max:19"
         },
         {
+            "name": "Discord Break Role Id",
+            "description": "Discord Break Role Id",
+            "env_variable": "DISCORD_BREAK_ROLE",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
+            "name": "Discord Break Channel Id",
+            "description": "Discord Break Channel Id",
+            "env_variable": "DISCORD_BREAK_CHANNEL",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:19"
+        },
+        {
             "name": "Discord Main Server Id",
             "description": "The server id for the main server",
             "env_variable": "DISCORD_MAIN_SERVER",
