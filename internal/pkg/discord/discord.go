@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/benhall-1/wicked/internal/pkg/discord/cmds"
-	"github.com/benhall-1/wicked/internal/pkg/discord/events"
 	"github.com/bwmarrin/discordgo"
 	"github.com/jmoiron/sqlx"
 )
@@ -17,12 +16,12 @@ type DiscordBot struct {
 }
 
 func (db DiscordBot) SetupHandlers() {
-	db.session.AddHandler(events.MessageEvent.Handle)
+	db.session.AddHandler(db.OnMessageCreate)
 	db.session.AddHandler(db.InteractionCreate)
 	db.session.AddHandler(db.OnReady)
 }
 
-func (db DiscordBot) g() {
+func (db DiscordBot) RegisterCommands() {
 	var (
 		staffserv = os.Getenv("DISCORD_STAFF_SERVER")
 	)
@@ -35,28 +34,28 @@ func (db DiscordBot) g() {
 	}
 }
 
-func (db DiscordBot) RegisterCommands() {
-	var (
-		dperms = false
-		cmds   = []*discordgo.ApplicationCommand{
-			{
-				Name:              "createbreakrolemenu",
-				Description:       "Creates break role menu",
-				DefaultPermission: &dperms,
-			},
-		}
-		staffserv = os.Getenv("DISCORD_STAFF_SERVER")
-	)
+// func (db DiscordBot) RegisterCommands() {
+// 	var (
+// 		dperms = false
+// 		cmds   = []*discordgo.ApplicationCommand{
+// 			{
+// 				Name:              "createbreakrolemenu",
+// 				Description:       "Creates break role menu",
+// 				DefaultPermission: &dperms,
+// 			},
+// 		}
+// 		staffserv = os.Getenv("DISCORD_STAFF_SERVER")
+// 	)
 
-	registeredCommands := make([]*discordgo.ApplicationCommand, len(cmds))
-	for i := range cmds {
-		cmd, err := db.session.ApplicationCommandCreate(db.session.State.User.ID, staffserv, cmds[i])
-		if err != nil {
-			log.Panicf("Cannot create '%v' command: %v", cmds[i].Name, err)
-		}
-		registeredCommands[i] = cmd
-	}
-}
+// 	registeredCommands := make([]*discordgo.ApplicationCommand, len(cmds))
+// 	for i := range cmds {
+// 		cmd, err := db.session.ApplicationCommandCreate(db.session.State.User.ID, staffserv, cmds[i])
+// 		if err != nil {
+// 			log.Panicf("Cannot create '%v' command: %v", cmds[i].Name, err)
+// 		}
+// 		registeredCommands[i] = cmd
+// 	}
+// }
 
 func NewDiscordBot(token string, session *discordgo.Session, db *sqlx.DB) DiscordBot {
 	return DiscordBot{token, session, db}
