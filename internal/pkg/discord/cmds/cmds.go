@@ -1,13 +1,10 @@
 package cmds
 
-import "github.com/bwmarrin/discordgo"
+import (
+	"github.com/benhall-1/wicked/internal/pkg/discord/cmds/break_role"
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
+)
 
-type Command interface {
-	Name() string
-	Description() string
-	Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
-}
-
-var Commands = map[string]Command{
-	"createbreakrolemenu": BreakRoleCommand{},
+var Commands = map[string]interfaces.Command{
+	"createbreakrolemenu": break_role.Command{},
 }

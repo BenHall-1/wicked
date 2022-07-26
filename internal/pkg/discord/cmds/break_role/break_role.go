@@ -1,22 +1,23 @@
-package cmds
+package break_role
 
 import (
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/bwmarrin/discordgo"
 )
 
-type BreakRoleCommand struct {
-	Command
+type Command struct {
+	interfaces.Command
 }
 
-func (c BreakRoleCommand) Name() string {
+func (c Command) Name() string {
 	return "createbreakrolemenu"
 }
 
-func (c BreakRoleCommand) Description() string {
+func (c Command) Description() string {
 	return "Creates break role menu"
 }
 
-func (c BreakRoleCommand) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{

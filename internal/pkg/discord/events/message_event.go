@@ -5,13 +5,14 @@ import (
 	"os"
 	"strings"
 
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/benhall-1/wicked/internal/pkg/models"
 	"github.com/benhall-1/wicked/internal/pkg/utils"
 	"github.com/bwmarrin/discordgo"
 )
 
 type MessageEvent struct {
-	Event
+	interfaces.Event
 }
 
 func (e MessageEvent) Handle(s *discordgo.Session, m *discordgo.MessageCreate) {

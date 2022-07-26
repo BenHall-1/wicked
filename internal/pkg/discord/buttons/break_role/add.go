@@ -1,12 +1,15 @@
-package buttons
+package break_role
 
-import "github.com/bwmarrin/discordgo"
+import (
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
+	"github.com/bwmarrin/discordgo"
+)
 
-type AddBreakRoleButton struct {
-	Button
+type Add struct {
+	interfaces.Button
 }
 
-func (b AddBreakRoleButton) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func (b Add) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseModal,
 		Data: &discordgo.InteractionResponseData{

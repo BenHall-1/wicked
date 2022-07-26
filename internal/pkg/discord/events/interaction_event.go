@@ -4,11 +4,12 @@ import (
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons"
 	"github.com/benhall-1/wicked/internal/pkg/discord/cmds"
 	"github.com/benhall-1/wicked/internal/pkg/discord/modals"
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/bwmarrin/discordgo"
 )
 
 type InteractionEvent struct {
-	Event
+	interfaces.Event
 }
 
 func (e InteractionEvent) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {

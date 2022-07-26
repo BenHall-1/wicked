@@ -1,17 +1,18 @@
-package modals
+package break_role
 
 import (
 	"fmt"
 	"os"
 
+	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/bwmarrin/discordgo"
 )
 
-type BreakRoleModal struct {
-	Modal
+type Modal struct {
+	interfaces.Modal
 }
 
-func (b BreakRoleModal) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func (b Modal) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	var (
 		data = i.ModalSubmitData()
 		ssid = os.Getenv("DISCORD_STAFF_SERVER")
