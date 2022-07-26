@@ -42,7 +42,7 @@ func (e MessageEvent) Handle(s *discordgo.Session, m *discordgo.MessageCreate) {
 					Embeds: []*discordgo.MessageEmbed{{
 						Title:       "Duplicate Image Detected",
 						Color:       11648506,
-						Description: fmt.Sprintf("This piece of art was uploaded by the following member(s): %v", strings.Join(uploadList, "\n")),
+						Description: fmt.Sprintf("This piece of art was uploaded by the following member(s): \n%v", strings.Join(uploadList, "\n")),
 					}},
 					Content: fmt.Sprintf("<@&%s>, An image that has been uploaded is a duplicate", modrole),
 				})
