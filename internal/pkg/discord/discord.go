@@ -17,8 +17,8 @@ type DiscordBot struct {
 }
 
 func (db DiscordBot) SetupHandlers() {
-	db.session.AddHandler(events.MessageEvent.Handle)
-	db.session.AddHandler(events.InteractionEvent.Handle)
+	db.session.AddHandler(events.MessageEvent{}.Handle)
+	db.session.AddHandler(events.InteractionEvent{}.Handle)
 	db.session.AddHandler(db.OnReady)
 }
 
