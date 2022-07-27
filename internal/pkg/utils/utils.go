@@ -6,6 +6,9 @@ import (
 	"io"
 	"net/http"
 	"strings"
+
+	"github.com/benhall-1/wicked/internal/pkg/models"
+	"github.com/bwmarrin/discordgo"
 )
 
 func EscapeSpecialCharacters(value string) string {
@@ -64,4 +67,12 @@ func GetBase64FromUrl(url string) string {
 
 func toBase64(b []byte) string {
 	return base64.StdEncoding.EncodeToString(b)
+}
+
+func MessageEmbed(embed models.Embed) discordgo.MessageEmbed {
+	return discordgo.MessageEmbed{
+		Title:       embed.Title,
+		Description: embed.Description,
+		Color:       11648506,
+	}
 }

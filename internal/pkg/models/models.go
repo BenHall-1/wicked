@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/benhall-1/wicked/internal/pkg/db"
-	"github.com/benhall-1/wicked/internal/pkg/utils"
 )
 
 type ImageUploaded struct {
@@ -15,10 +14,15 @@ type ImageUploaded struct {
 	CreatedDate time.Time `db:"created_date"`
 }
 
+type Embed struct {
+	Title       string
+	Description string
+}
+
 func GetAllImagesUploadedByHash(hash string) []ImageUploaded {
 	var previousImages []ImageUploaded
 	query := "SELECT * FROM images_uploaded WHERE image_hash = '%s'"
-	query = fmt.Sprintf(query, utils.EscapeSpecialCharacters(hash))
+	query = fmt.Sprintf(query, hash)
 	if err := db.Database.Select(&previousImages, query); err != nil {
 		return nil
 	}
@@ -28,6 +32,6 @@ func GetAllImagesUploadedByHash(hash string) []ImageUploaded {
 
 func AddImageUpload(userId, messageId, imageHash string) {
 	query := "INSERT INTO images_uploaded (user_id, message_id, image_hash) VALUES ('%s', '%s', '%s')"
-	query = fmt.Sprintf(query, userId, messageId, utils.EscapeSpecialCharacters(imageHash))
+	query = fmt.Sprintf(query, userId, messageId, imageHash)
 	db.Database.Exec(query)
 }

@@ -26,7 +26,7 @@ func (e MessageEvent) Handle(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if m.ChannelID == artchan {
 		for i := range m.Attachments {
 			encodedValue := utils.GetBase64FromUrl(m.Attachments[i].URL)
-			uploads := models.GetAllImagesUploadedByHash(encodedValue)
+			uploads := models.GetAllImagesUploadedByHash(utils.EscapeSpecialCharacters(encodedValue))
 			if len(uploads) > 0 {
 				uploadList := make([]string, 0, len(uploads))
 
@@ -49,7 +49,7 @@ func (e MessageEvent) Handle(s *discordgo.Session, m *discordgo.MessageCreate) {
 				})
 			}
 
-			models.AddImageUpload(m.Author.ID, m.ID, encodedValue)
+			models.AddImageUpload(m.Author.ID, m.ID, utils.EscapeSpecialCharacters(encodedValue))
 		}
 	}
 }
