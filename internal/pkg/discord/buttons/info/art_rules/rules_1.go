@@ -14,7 +14,7 @@ type ArtRules1 struct {
 
 func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_rules:1001796744822136852> Art Rules (1/2)",
+		Title: "<:blurple_rules:1001908456351084634> Art Rules (1/2)",
 		Description: `
 			**No Stealing Art**
 			Theft of any art is not allowed in our art channel. This includes stealing a full image (or partial) and claiming it as your own, tracing over an image and claiming it as your own, and using any type of base without credit to the original creator. These are non-negotiable. 
@@ -44,7 +44,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Label:    "Community Rules",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785025185988708",
+								ID: "1001908457584201809",
 							},
 						},
 						discordgo.Button{
@@ -52,7 +52,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Label:    "Previous Page",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785027694178365",
+								ID: "1001908460255969400",
 							},
 							Disabled: true,
 						},
@@ -61,7 +61,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Label:    "Next Page",
 							CustomID: "art_rules_2",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785026461061130",
+								ID: "1001908458582458409",
 							},
 						},
 					},

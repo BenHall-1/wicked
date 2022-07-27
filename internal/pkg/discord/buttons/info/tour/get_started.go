@@ -39,7 +39,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 							Label:    "Previous Page",
 							CustomID: "fake",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785027694178365",
+								ID: "1001908460255969400",
 							},
 							Disabled: true,
 						},
@@ -48,7 +48,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 							Label:    "Next Page",
 							CustomID: "roles",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785026461061130",
+								ID: "1001908458582458409",
 							},
 						},
 					},

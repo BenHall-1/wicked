@@ -42,7 +42,7 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 							Label:    "Previous Page",
 							CustomID: "get_started",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785027694178365",
+								ID: "1001908460255969400",
 							},
 						},
 						discordgo.Button{
@@ -50,7 +50,7 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 							Label:    "Next Page",
 							CustomID: "channels",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785026461061130",
+								ID: "1001908458582458409",
 							},
 							Disabled: true,
 						},

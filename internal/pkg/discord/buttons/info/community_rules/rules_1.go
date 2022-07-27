@@ -14,7 +14,7 @@ type CommunityRules1 struct {
 
 func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_rules:1001796744822136852> Community Rules (1/2)",
+		Title: "<:blurple_rules:1001908456351084634> Community Rules (1/2)",
 		Description: `
 			**No Hate Speech**
 			Hate speech, homophobia, discrimination, and controversial topics will not be tolerated. This includes general toxic behavior and drama.
@@ -47,7 +47,7 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Art Rules",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785025185988708",
+								ID: "1001908457584201809",
 							},
 						},
 						discordgo.Button{
@@ -55,7 +55,7 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Previous Page",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785027694178365",
+								ID: "1001908460255969400",
 							},
 							Disabled: true,
 						},
@@ -64,7 +64,7 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Next Page",
 							CustomID: "community_rules_2",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785026461061130",
+								ID: "1001908458582458409",
 							},
 						},
 					},

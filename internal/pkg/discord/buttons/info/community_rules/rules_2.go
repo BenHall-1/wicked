@@ -41,7 +41,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Art Rules",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785025185988708",
+								ID: "1001908457584201809",
 							},
 						},
 						discordgo.Button{
@@ -49,7 +49,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Previous Page",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785027694178365",
+								ID: "1001908460255969400",
 							},
 						},
 						discordgo.Button{
@@ -57,7 +57,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Next Page",
 							CustomID: "community_rules_2",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785026461061130",
+								ID: "1001908458582458409",
 							},
 							Disabled: true,
 						},

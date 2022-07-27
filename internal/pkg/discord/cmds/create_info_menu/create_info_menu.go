@@ -27,7 +27,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		infid = os.Getenv("DISCORD_INFO_CHANNEL")
 	)
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_guide:1001796740787220602> Tubbo's Pastel Café",
+		Title: "<:blurple_guide:1001908469038850161> Tubbo's Pastel Café",
 		Description: `This is a place where you can share your art with the world
 						and see what other people have shared.`,
 	})
@@ -41,7 +41,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						Label:    "Community Rules",
 						CustomID: "community_rules_button",
 						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785025185988708",
+							ID: "1001908457584201809",
 						},
 					},
 					discordgo.Button{
@@ -49,7 +49,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						Label:    "Art Rules",
 						CustomID: "art_rules_button",
 						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785025185988708",
+							ID: "1001908457584201809",
 						},
 					},
 					discordgo.Button{
@@ -57,7 +57,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						Label:    "Get Started",
 						CustomID: "get_started",
 						Emoji: discordgo.ComponentEmoji{
-							ID: "1001903835977101322",
+							ID: "1001909265444896868",
 						},
 					},
 				},
