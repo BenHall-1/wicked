@@ -6,7 +6,7 @@ var Emoji = map[string]string{
 	"badge_artist": "<:badge_artist:1001908464911655042>",
 	"badge_mod":    "<:badge_mod:1001908465742123009>",
 	"badge_owner":  "<:badge_owner:1001908463804358776>",
-	"badge_sub":    "<:badge_sub:1001803508590321664>",
+	"badge_sub":    "<:badge_sub:1001913722417189007>",
 	// Blurple
 	"blurple_badge":  "<:blurple_badge:1001908455176687677>",
 	"blurple_boosts": "<a:blurple_boosts:1001908462302810143>",
@@ -25,7 +25,7 @@ var EmojiIds = map[string]string{
 	"badge_artist": "1001908464911655042",
 	"badge_mod":    "1001908465742123009",
 	"badge_owner":  "1001908463804358776",
-	"badge_sub":    "1001803508590321664",
+	"badge_sub":    "1001913722417189007",
 	// Blurple
 	"blurple_badge":  "1001908455176687677",
 	"blurple_boosts": "1001908462302810143",
