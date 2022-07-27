@@ -25,6 +25,9 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		Description: `This is a place where you can share your art with the world
 						and see what other people have shared.`,
 	})
+	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+		Type: discordgo.InteractionResponsePong,
+	})
 	s.FollowupMessageCreate(i.Interaction, true, &discordgo.WebhookParams{
 		Embeds: []*discordgo.MessageEmbed{&embed},
 		Flags:  1 << 6,
