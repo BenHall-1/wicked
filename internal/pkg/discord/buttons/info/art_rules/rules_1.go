@@ -8,6 +8,7 @@ import (
 )
 
 type ArtRules1 struct {
+	FromMainMenu bool
 	interfaces.Button
 }
 
@@ -25,8 +26,13 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 			Joke posts (“shitposts”) are also not allowed in our art channel. This can range from images that are memes, images making fun of others, etc. Staff have the final say on shitpost images. 
 		`,
 	})
+	t := discordgo.InteractionResponseUpdateMessage
+
+	if b.FromMainMenu {
+		t = discordgo.InteractionResponseChannelMessageWithSource
+	}
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponseUpdateMessage,
+		Type: t,
 		Data: &discordgo.InteractionResponseData{
 			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,

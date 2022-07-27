@@ -8,6 +8,7 @@ import (
 )
 
 type CommunityRules1 struct {
+	FromMainMenu bool
 	interfaces.Button
 }
 
@@ -28,8 +29,13 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 			Do not ping Tubbo or any other creators you see in the server. Refrain from pinging any staff unless immediate help is required. If you need to report a message, react with <:report:810042563008135169>.
 		`,
 	})
+	t := discordgo.InteractionResponseUpdateMessage
+
+	if b.FromMainMenu {
+		t = discordgo.InteractionResponseChannelMessageWithSource
+	}
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponseUpdateMessage,
+		Type: t,
 		Data: &discordgo.InteractionResponseData{
 			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,

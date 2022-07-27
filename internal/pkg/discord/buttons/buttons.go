@@ -14,6 +14,9 @@ var Buttons = map[string]interfaces.Button{
 	"remove_break_role_button": break_role.Remove{},
 	// Info Buttons
 	"info_button": info.Info{},
+	// Main Menu Buttons
+	"community_rules_button": community_rules.CommunityRules1{FromMainMenu: true},
+	"art_rules_button":       art_rules.ArtRules1{FromMainMenu: true},
 	// Community Rules Buttons
 	"community_rules_1": community_rules.CommunityRules1{},
 	"community_rules_2": community_rules.CommunityRules2{},
