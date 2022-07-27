@@ -19,7 +19,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 		Title: fmt.Sprintf("%s Getting Started in Tubbo's Pastel Café (1/3)", utils.Emoji["blurple_guide"]),
 		Description: fmt.Sprintf(`
 			As a new member, you might come across a few things that may confuse you. To help you with getting started in the community, we created this "Getting Started" guide to walk you trough everything you have to know, step by step. 
-			Any questions? Feel free to contact one of our team!
+			Any questions? Feel free to contact one of our team members!
 
 			%s **Subscribing**
 			Subscribing is a way of gaining access to the server. This will grant you the <@&790351230865506325> role.

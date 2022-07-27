@@ -15,11 +15,11 @@ type Command struct {
 }
 
 func (c Command) Name() string {
-	return "test"
+	return "createinfomenu"
 }
 
 func (c Command) Description() string {
-	return "Test command for Ben"
+	return "Creates the main info menu"
 }
 
 func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
@@ -28,8 +28,24 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	)
 	embed := utils.MessageEmbed(models.Embed{
 		Title: fmt.Sprintf("%s Tubbo's Pastel Café", utils.Emoji["blurple_guide"]),
-		Description: `This is a place where you can share your art with the world
-						and see what other people have shared.`,
+		Description: fmt.Sprintf(`
+			Welcome to Tubbo's Discord! Please use the buttons below to navigate information about the server.
+
+			**Socials**:
+			%[1]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
+			%[2]s Twitter [@TubboLive](https://twitter.com/TubboLive)
+			%[2]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
+			%[3]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
+			%[4]s Twitch Alt [@TubboLIVE](https://twitch.tv/TubboLIVE)
+			%[4]s Reddit [@Tubbo](https://www.reddit.com/r/Tubbo)
+			%[5]s Merch [ShopTubbo.com](https://shoptubbo.com)
+			%[6]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
+			%[6]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
+
+			**Contact**:
+			- Email (Business) [tubbobusiness@gmail.com](mailto:tubbobusiness@gmail.com)
+			- Email (Merch) [support@shoptubbo.com](mailto:support@shoptubbo.com)
+		`, utils.Emoji["blurple_youtube"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_email"]),
 	})
 	s.ChannelMessageSendComplex(infid, &discordgo.MessageSend{
 		Embeds: []*discordgo.MessageEmbed{&embed},
