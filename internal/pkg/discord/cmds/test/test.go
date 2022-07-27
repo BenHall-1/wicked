@@ -26,28 +26,28 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						and see what other people have shared.`,
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponsePong,
-	})
-	s.FollowupMessageCreate(i.Interaction, true, &discordgo.WebhookParams{
-		Embeds: []*discordgo.MessageEmbed{&embed},
-		Flags:  1 << 6,
-		Components: []discordgo.MessageComponent{
-			discordgo.ActionsRow{
-				Components: []discordgo.MessageComponent{
-					discordgo.Button{
-						Style:    discordgo.SuccessButton,
-						Label:    "Community Rules",
-						CustomID: "community_rules_1",
-						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785025185988708",
+		Type: discordgo.InteractionResponseChannelMessageWithSource,
+		Data: &discordgo.InteractionResponseData{
+			Embeds: []*discordgo.MessageEmbed{&embed},
+			Flags:  1 << 6,
+			Components: []discordgo.MessageComponent{
+				discordgo.ActionsRow{
+					Components: []discordgo.MessageComponent{
+						discordgo.Button{
+							Style:    discordgo.SuccessButton,
+							Label:    "Community Rules",
+							CustomID: "community_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785025185988708",
+							},
 						},
-					},
-					discordgo.Button{
-						Style:    discordgo.SuccessButton,
-						Label:    "Art Rules",
-						CustomID: "art_rules_1",
-						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785025185988708",
+						discordgo.Button{
+							Style:    discordgo.SuccessButton,
+							Label:    "Art Rules",
+							CustomID: "art_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785025185988708",
+							},
 						},
 					},
 				},
