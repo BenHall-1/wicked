@@ -36,7 +36,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						discordgo.Button{
 							Style:    discordgo.SuccessButton,
 							Label:    "Community Rules",
-							CustomID: "community_rules_1",
+							CustomID: "community_rules_button",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785025185988708",
 							},
@@ -44,7 +44,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						discordgo.Button{
 							Style:    discordgo.SuccessButton,
 							Label:    "Art Rules",
-							CustomID: "art_rules_1",
+							CustomID: "art_rules_button",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785025185988708",
 							},
