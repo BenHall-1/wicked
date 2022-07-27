@@ -36,8 +36,19 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 					Components: []discordgo.MessageComponent{
 						discordgo.Button{
 							Style:    discordgo.PrimaryButton,
-							Label:    "Rules",
-							CustomID: "rules_button",
+							Label:    "Community Rules",
+							CustomID: "community_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785025185988708",
+							},
+						},
+						discordgo.Button{
+							Style:    discordgo.PrimaryButton,
+							Label:    "Art Rules",
+							CustomID: "art_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785025185988708",
+							},
 						},
 					},
 				},
