@@ -54,6 +54,14 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							},
 							Disabled: true,
 						},
+						discordgo.Button{
+							Style:    discordgo.SecondaryButton,
+							Label:    "Next Page",
+							CustomID: "community_rules_2",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785026461061130",
+							},
+						},
 					},
 				},
 				discordgo.ActionsRow{

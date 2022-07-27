@@ -51,7 +51,6 @@ func (b ArtRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785027694178365",
 							},
-							Disabled: true,
 						},
 						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
@@ -60,6 +59,7 @@ func (b ArtRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785026461061130",
 							},
+							Disabled: true,
 						},
 					},
 				},
