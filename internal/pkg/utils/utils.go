@@ -11,6 +11,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+var InfoMenus map[string]*discordgo.Interaction
+
 func EscapeSpecialCharacters(value string) string {
 	replace := []struct {
 		raw  string

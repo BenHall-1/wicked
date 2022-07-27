@@ -28,49 +28,53 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 			Do not ping Tubbo or any other creators you see in the server. Refrain from pinging any staff unless immediate help is required. If you need to report a message, react with <:report:810042563008135169>.
 		`,
 	})
-	s.InteractionResponseEdit(i.Interaction, &discordgo.WebhookEdit{
-		Embeds: []*discordgo.MessageEmbed{&embed},
-		Components: []discordgo.MessageComponent{
-			discordgo.ActionsRow{
-				Components: []discordgo.MessageComponent{
-					discordgo.Button{
-						Style:    discordgo.SuccessButton,
-						Label:    "Art Rules",
-						CustomID: "art_rules_1",
-						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785025185988708",
+	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+		Type: discordgo.InteractionResponseUpdateMessage,
+		Data: &discordgo.InteractionResponseData{
+			Embeds: []*discordgo.MessageEmbed{&embed},
+			Flags:  1 << 6,
+			Components: []discordgo.MessageComponent{
+				discordgo.ActionsRow{
+					Components: []discordgo.MessageComponent{
+						discordgo.Button{
+							Style:    discordgo.SuccessButton,
+							Label:    "Art Rules",
+							CustomID: "art_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785025185988708",
+							},
 						},
-					},
-					discordgo.Button{
-						Style:    discordgo.SecondaryButton,
-						Label:    "Previous Page",
-						CustomID: "community_rules_1",
-						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785027694178365",
+						discordgo.Button{
+							Style:    discordgo.SecondaryButton,
+							Label:    "Previous Page",
+							CustomID: "community_rules_1",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785027694178365",
+							},
+							Disabled: true,
 						},
-						Disabled: true,
-					},
-					discordgo.Button{
-						Style:    discordgo.SecondaryButton,
-						Label:    "Next Page",
-						CustomID: "community_rules_2",
-						Emoji: discordgo.ComponentEmoji{
-							ID: "1001785026461061130",
+						discordgo.Button{
+							Style:    discordgo.SecondaryButton,
+							Label:    "Next Page",
+							CustomID: "community_rules_2",
+							Emoji: discordgo.ComponentEmoji{
+								ID: "1001785026461061130",
+							},
 						},
 					},
 				},
-			},
-			discordgo.ActionsRow{
-				Components: []discordgo.MessageComponent{
-					discordgo.Button{
-						Style: discordgo.LinkButton,
-						Label: "Discord Terms of Service",
-						URL:   "https://dis.gd/tos",
-					},
-					discordgo.Button{
-						Style: discordgo.LinkButton,
-						Label: "Discord Community Guidelines",
-						URL:   "https://dis.gd/guidelines",
+				discordgo.ActionsRow{
+					Components: []discordgo.MessageComponent{
+						discordgo.Button{
+							Style: discordgo.LinkButton,
+							Label: "Discord Terms of Service",
+							URL:   "https://dis.gd/tos",
+						},
+						discordgo.Button{
+							Style: discordgo.LinkButton,
+							Label: "Discord Community Guidelines",
+							URL:   "https://dis.gd/guidelines",
+						},
 					},
 				},
 			},

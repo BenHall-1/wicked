@@ -29,7 +29,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 		`,
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponseChannelMessageWithSource,
+		Type: discordgo.InteractionResponseUpdateMessage,
 		Data: &discordgo.InteractionResponseData{
 			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,
