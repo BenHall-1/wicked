@@ -35,7 +35,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 				discordgo.ActionsRow{
 					Components: []discordgo.MessageComponent{
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SuccessButton,
 							Label:    "Community Rules",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
@@ -43,7 +43,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							},
 						},
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SecondaryButton,
 							Label:    "Previous Page",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
@@ -52,7 +52,7 @@ func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 							Disabled: true,
 						},
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SecondaryButton,
 							Label:    "Next Page",
 							CustomID: "art_rules_2",
 							Emoji: discordgo.ComponentEmoji{

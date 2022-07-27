@@ -38,7 +38,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 				discordgo.ActionsRow{
 					Components: []discordgo.MessageComponent{
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SuccessButton,
 							Label:    "Art Rules",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
@@ -46,7 +46,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							},
 						},
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SecondaryButton,
 							Label:    "Previous Page",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
@@ -54,7 +54,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							},
 						},
 						discordgo.Button{
-							Style:    discordgo.PrimaryButton,
+							Style:    discordgo.SecondaryButton,
 							Label:    "Next Page",
 							CustomID: "community_rules_2",
 							Emoji: discordgo.ComponentEmoji{
@@ -62,6 +62,10 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							},
 							Disabled: true,
 						},
+					},
+				},
+				discordgo.ActionsRow{
+					Components: []discordgo.MessageComponent{
 						discordgo.Button{
 							Style: discordgo.LinkButton,
 							Label: "Discord Terms of Service",
