@@ -14,7 +14,7 @@ type CommunityRules2 struct {
 func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	// Respond to interaction with a private embed
 	mainRulesEmbed := utils.MessageEmbed(models.Embed{
-		Title: "Community Rules",
+		Title: "Community Rules (2/2)",
 		Description: `
 			**No NSFW**
 			No NSFW or profane content. This includes heavy gore, sensitive topics, etc.

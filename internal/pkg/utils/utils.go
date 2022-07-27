@@ -73,6 +73,6 @@ func MessageEmbed(embed models.Embed) discordgo.MessageEmbed {
 	return discordgo.MessageEmbed{
 		Title:       embed.Title,
 		Description: embed.Description,
-		// Color:       11648506,
+		Color:       3092790,
 	}
 }

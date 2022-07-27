@@ -14,7 +14,7 @@ type CommunityRules1 struct {
 func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	// Respond to interaction with a private embed
 	mainRulesEmbed := utils.MessageEmbed(models.Embed{
-		Title: "Community Rules",
+		Title: "Community Rules (1/2)",
 		Description: `
 			**No Hate Speech**
 			Hate speech, homophobia, discrimination, and controversial topics will not be tolerated. This includes general toxic behavior and drama.
