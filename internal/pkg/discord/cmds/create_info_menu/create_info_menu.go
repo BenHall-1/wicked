@@ -55,7 +55,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 					discordgo.Button{
 						Style:    discordgo.SuccessButton,
 						Label:    "Get Started",
-						CustomID: "get_started",
+						CustomID: "get_started_button",
 						Emoji: discordgo.ComponentEmoji{
 							ID: utils.EmojiIds["guide"],
 						},

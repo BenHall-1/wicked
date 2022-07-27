@@ -18,6 +18,7 @@ var Buttons = map[string]interfaces.Button{
 	// Main Menu Buttons
 	"community_rules_button": community_rules.CommunityRules1{FromMainMenu: true},
 	"art_rules_button":       art_rules.ArtRules1{FromMainMenu: true},
+	"get_started_button":     tour.GetStarted{FromMainMenu: true},
 	// Community Rules Buttons
 	"community_rules_1": community_rules.CommunityRules1{},
 	"community_rules_2": community_rules.CommunityRules2{},

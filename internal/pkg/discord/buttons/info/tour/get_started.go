@@ -10,26 +10,34 @@ import (
 )
 
 type GetStarted struct {
+	FromMainMenu bool
 	interfaces.Button
 }
 
 func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
 		Title: fmt.Sprintf("%s Getting Started in Tubbo's Pastel Café (1/3)", utils.Emoji["blurple_guide"]),
-		Description: `
+		Description: fmt.Sprintf(`
 			As a new member, you might come across a few things that may confuse you. To help you with getting started in the community, we created this "Getting Started" guide to walk you trough everything you have to know, step by step. 
 			Any questions? Feel free to contact one of our team!
 
-			<:badge_sub:1001803508590321664> **Subscribing**
+			%s **Subscribing**
 			Subscribing is a way of gaining access to the server. This will grant you the <@&790351230865506325> role.
 			You can subscribe by [Clicking Here](https://www.twitch.tv/products/orphictubbo).
 
-			<a:blurple_boosts:1001802001304272917> **Boosting**
+			%s **Boosting**
 			Boosting is one way to get access to the rest of the server. This will grant you the <@&620374536625324042> role.
-		`,
+		`, utils.Emoji["badge_sub"], utils.Emoji["blurple_boosts"]),
 	})
+
+	t := discordgo.InteractionResponseUpdateMessage
+
+	if b.FromMainMenu {
+		t = discordgo.InteractionResponseChannelMessageWithSource
+	}
+
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-		Type: discordgo.InteractionResponseChannelMessageWithSource,
+		Type: t,
 		Data: &discordgo.InteractionResponseData{
 			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,
