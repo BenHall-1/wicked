@@ -12,9 +12,8 @@ type CommunityRules1 struct {
 }
 
 func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
-	// Respond to interaction with a private embed
-	mainRulesEmbed := utils.MessageEmbed(models.Embed{
-		Title: "Community Rules (1/2)",
+	embed := utils.MessageEmbed(models.Embed{
+		Title: "<:blurple_rules:1001796744822136852> Community Rules (1/2)",
 		Description: `
 			**No Hate Speech**
 			Hate speech, homophobia, discrimination, and controversial topics will not be tolerated. This includes general toxic behavior and drama.
@@ -32,7 +31,7 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{
-			Embeds: []*discordgo.MessageEmbed{&mainRulesEmbed},
+			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,
 			Components: []discordgo.MessageComponent{
 				discordgo.ActionsRow{

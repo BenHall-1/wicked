@@ -1,4 +1,4 @@
-package art_rules
+package tour
 
 import (
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
@@ -7,22 +7,26 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-type ArtRules1 struct {
+type Roles struct {
 	interfaces.Button
 }
 
-func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_rules:1001796744822136852> Art Rules (1/2)",
+		Title: "<:blurple_badge:1001796743068930129> Important Roles (1/3)",
 		Description: `
-			**No Stealing Art**
-			Theft of any art is not allowed in our art channel. This includes stealing a full image (or partial) and claiming it as your own, tracing over an image and claiming it as your own, and using any type of base without credit to the original creator. These are non-negotiable. 
+			Roles identify key members of the community. If you want to find out more about what our main roles stand for and what they do exactly, keep on reading.
 
-			**Usage of Apps**
-			Apps such as piccrew and gacha are not allowed as it's not drawn yourself. 
+			<:badge_owner:1001800446580629565> <@&472898372571889676>
 
-			**No Joke/Meme Posts**
-			Joke posts (“shitposts”) are also not allowed in our art channel. This can range from images that are memes, images making fun of others, etc. Staff have the final say on shitpost images. 
+			<:badge_admin:1001798283724853298> <@&866451599270084639>
+			The Barista team is here to manage the server. These are our Administrators.
+
+			<:badge_mod:1001798282403663902> <@&934372109717737523>
+			The Janitor team is here to keep the community a safer and comfortable space at any given time. These are our Moderators. 
+
+			<:badge_artist:1001800233845526618> <@&872924363807158353>
+			The Latte Artists are here to keep an eye on the art channels and make sure that art is not stolen. 
 		`,
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{

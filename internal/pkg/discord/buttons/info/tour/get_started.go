@@ -1,4 +1,4 @@
-package art_rules
+package tour
 
 import (
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
@@ -7,22 +7,23 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-type ArtRules1 struct {
+type GetStarted struct {
 	interfaces.Button
 }
 
-func (b ArtRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_rules:1001796744822136852> Art Rules (1/2)",
+		Title: "<:blurple_guide:1001796740787220602> Getting Started in Tubbo's Pastel Café",
 		Description: `
-			**No Stealing Art**
-			Theft of any art is not allowed in our art channel. This includes stealing a full image (or partial) and claiming it as your own, tracing over an image and claiming it as your own, and using any type of base without credit to the original creator. These are non-negotiable. 
+			As a new member, you might come across a few things that may confuse you. To help you with getting started in the community, we created this "Getting Started" guide to walk you trough everything you have to know, step by step. 
+			Any questions? Feel free to contact one of our team!
 
-			**Usage of Apps**
-			Apps such as piccrew and gacha are not allowed as it's not drawn yourself. 
+			<:badge_sub:1001803508590321664> **Subscribing**
+			Subscribing is a way of gaining access to the server. This will grant you the <@&790351230865506325> role.
+			You can subscribe by [Clicking Here](https://www.twitch.tv/products/orphictubbo).
 
-			**No Joke/Meme Posts**
-			Joke posts (“shitposts”) are also not allowed in our art channel. This can range from images that are memes, images making fun of others, etc. Staff have the final say on shitpost images. 
+			<a:blurple_boosts:1001802001304272917> **Boosting**
+			Boosting is one way to get access to the rest of the server. This will grant you the <@&620374536625324042> role.
 		`,
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{

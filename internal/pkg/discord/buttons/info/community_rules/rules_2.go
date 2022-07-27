@@ -12,9 +12,8 @@ type CommunityRules2 struct {
 }
 
 func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
-	// Respond to interaction with a private embed
-	mainRulesEmbed := utils.MessageEmbed(models.Embed{
-		Title: "Community Rules (2/2)",
+	embed := utils.MessageEmbed(models.Embed{
+		Title: "<:blurple_rules:1001796744822136852> Community Rules (2/2)",
 		Description: `
 			**No NSFW**
 			No NSFW or profane content. This includes heavy gore, sensitive topics, etc.
@@ -32,7 +31,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{
-			Embeds: []*discordgo.MessageEmbed{&mainRulesEmbed},
+			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,
 			Components: []discordgo.MessageComponent{
 				discordgo.ActionsRow{

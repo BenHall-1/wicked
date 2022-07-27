@@ -12,9 +12,8 @@ type Info struct {
 }
 
 func (b Info) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
-	// Respond to interaction with a private embed
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "Welcome to Tubbo's Pastel Café",
+		Title: "<:blurple_guide:1001796740787220602> Welcome to Tubbo's Pastel Café",
 		Description: `This is a place where you can share your art with the world
 						and see what other people have shared.`,
 	})

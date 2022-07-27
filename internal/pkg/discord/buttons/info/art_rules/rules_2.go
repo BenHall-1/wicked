@@ -12,9 +12,8 @@ type ArtRules2 struct {
 }
 
 func (b ArtRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
-	// Respond to interaction with a private embed
-	mainRulesEmbed := utils.MessageEmbed(models.Embed{
-		Title: "Art Rules (2/2)",
+	embed := utils.MessageEmbed(models.Embed{
+		Title: "<:blurple_rules:1001796744822136852> Art Rules (2/2)",
 		Description: `
 			**No Offensive or negative/inappropriate emotes**
 			We do not allow the use of offensive emotes (emotes making fun of others’ art, emotes saying racial slurs, etc.) in our art channel. This also pertains to any inappropriate emotes (emotes that are of pornographic body parts, emotes depicting murder, etc.).
@@ -31,7 +30,7 @@ func (b ArtRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) 
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
 		Data: &discordgo.InteractionResponseData{
-			Embeds: []*discordgo.MessageEmbed{&mainRulesEmbed},
+			Embeds: []*discordgo.MessageEmbed{&embed},
 			Flags:  1 << 6,
 			Components: []discordgo.MessageComponent{
 				discordgo.ActionsRow{
