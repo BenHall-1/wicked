@@ -5,6 +5,7 @@ import (
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/art_rules"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/community_rules"
+	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/tour"
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 )
 
@@ -23,4 +24,6 @@ var Buttons = map[string]interfaces.Button{
 	// Art Rules Buttons
 	"art_rules_1": art_rules.ArtRules1{},
 	"art_rules_2": art_rules.ArtRules2{},
+	// Tour Buttons
+	"get_started": tour.GetStarted{},
 }

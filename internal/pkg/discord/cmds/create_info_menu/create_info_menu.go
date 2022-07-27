@@ -37,7 +37,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			discordgo.ActionsRow{
 				Components: []discordgo.MessageComponent{
 					discordgo.Button{
-						Style:    discordgo.SuccessButton,
+						Style:    discordgo.PrimaryButton,
 						Label:    "Community Rules",
 						CustomID: "community_rules_button",
 						Emoji: discordgo.ComponentEmoji{
@@ -45,11 +45,19 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						},
 					},
 					discordgo.Button{
-						Style:    discordgo.SuccessButton,
+						Style:    discordgo.PrimaryButton,
 						Label:    "Art Rules",
 						CustomID: "art_rules_button",
 						Emoji: discordgo.ComponentEmoji{
 							ID: "1001785025185988708",
+						},
+					},
+					discordgo.Button{
+						Style:    discordgo.SuccessButton,
+						Label:    "Get Started",
+						CustomID: "get_started",
+						Emoji: discordgo.ComponentEmoji{
+							ID: "1001903835977101322",
 						},
 					},
 				},
