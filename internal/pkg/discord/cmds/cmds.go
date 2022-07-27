@@ -8,5 +8,5 @@ import (
 
 var Commands = map[string]interfaces.Command{
 	"createbreakrolemenu": break_role.Command{},
-	"createinfomenu":      create_info_menu.Command{},
+	"test":                create_info_menu.Command{},
 }
