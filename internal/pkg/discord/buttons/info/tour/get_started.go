@@ -1,6 +1,8 @@
 package tour
 
 import (
+	"fmt"
+
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/benhall-1/wicked/internal/pkg/models"
 	"github.com/benhall-1/wicked/internal/pkg/utils"
@@ -13,7 +15,7 @@ type GetStarted struct {
 
 func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_guide:1001796740787220602> Getting Started in Tubbo's Pastel Café (1/3)",
+		Title: fmt.Sprintf("%s Getting Started in Tubbo's Pastel Café (1/3)", utils.Emoji["blurple_guide"]),
 		Description: `
 			As a new member, you might come across a few things that may confuse you. To help you with getting started in the community, we created this "Getting Started" guide to walk you trough everything you have to know, step by step. 
 			Any questions? Feel free to contact one of our team!
@@ -39,7 +41,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 							Label:    "Previous Page",
 							CustomID: "fake",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001908460255969400",
+								ID: utils.EmojiIds["previous_step"],
 							},
 							Disabled: true,
 						},
@@ -48,7 +50,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 							Label:    "Next Page",
 							CustomID: "roles",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001908458582458409",
+								ID: utils.EmojiIds["next_step"],
 							},
 						},
 					},

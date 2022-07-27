@@ -1,6 +1,8 @@
 package community_rules
 
 import (
+	"fmt"
+
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 	"github.com/benhall-1/wicked/internal/pkg/models"
 	"github.com/benhall-1/wicked/internal/pkg/utils"
@@ -13,7 +15,7 @@ type CommunityRules2 struct {
 
 func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_rules:1001796744822136852> Community Rules (2/2)",
+		Title: fmt.Sprintf("%s Community Rules (2/2)", utils.Emoji["blurple_rules"]),
 		Description: `
 			**No NSFW**
 			No NSFW or profane content. This includes heavy gore, sensitive topics, etc.
@@ -41,7 +43,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Art Rules",
 							CustomID: "art_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001908457584201809",
+								ID: utils.EmojiIds["rules"],
 							},
 						},
 						discordgo.Button{
@@ -49,7 +51,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Previous Page",
 							CustomID: "community_rules_1",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001908460255969400",
+								ID: utils.EmojiIds["previous_step"],
 							},
 						},
 						discordgo.Button{
@@ -57,7 +59,7 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 							Label:    "Next Page",
 							CustomID: "community_rules_2",
 							Emoji: discordgo.ComponentEmoji{
-								ID: "1001908458582458409",
+								ID: utils.EmojiIds["next_step"],
 							},
 							Disabled: true,
 						},
