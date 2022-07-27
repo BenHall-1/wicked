@@ -13,7 +13,7 @@ type GetStarted struct {
 
 func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_guide:1001796740787220602> Getting Started in Tubbo's Pastel Café",
+		Title: "<:blurple_guide:1001796740787220602> Getting Started in Tubbo's Pastel Café (1/3)",
 		Description: `
 			As a new member, you might come across a few things that may confuse you. To help you with getting started in the community, we created this "Getting Started" guide to walk you trough everything you have to know, step by step. 
 			Any questions? Feel free to contact one of our team!
@@ -35,17 +35,9 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 				discordgo.ActionsRow{
 					Components: []discordgo.MessageComponent{
 						discordgo.Button{
-							Style:    discordgo.SuccessButton,
-							Label:    "Community Rules",
-							CustomID: "community_rules_1",
-							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785025185988708",
-							},
-						},
-						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
 							Label:    "Previous Page",
-							CustomID: "art_rules_1",
+							CustomID: "fake",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785027694178365",
 							},
@@ -54,7 +46,7 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
 							Label:    "Next Page",
-							CustomID: "art_rules_2",
+							CustomID: "roles",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785026461061130",
 							},

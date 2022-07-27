@@ -13,7 +13,7 @@ type Roles struct {
 
 func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: "<:blurple_badge:1001796743068930129> Important Roles (1/3)",
+		Title: "<:blurple_badge:1001796743068930129> Important Roles (2/3)",
 		Description: `
 			Roles identify key members of the community. If you want to find out more about what our main roles stand for and what they do exactly, keep on reading.
 
@@ -38,29 +38,21 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				discordgo.ActionsRow{
 					Components: []discordgo.MessageComponent{
 						discordgo.Button{
-							Style:    discordgo.SuccessButton,
-							Label:    "Community Rules",
-							CustomID: "community_rules_1",
-							Emoji: discordgo.ComponentEmoji{
-								ID: "1001785025185988708",
-							},
-						},
-						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
 							Label:    "Previous Page",
-							CustomID: "art_rules_1",
+							CustomID: "get_started",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785027694178365",
 							},
-							Disabled: true,
 						},
 						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
 							Label:    "Next Page",
-							CustomID: "art_rules_2",
+							CustomID: "channels",
 							Emoji: discordgo.ComponentEmoji{
 								ID: "1001785026461061130",
 							},
+							Disabled: true,
 						},
 					},
 				},

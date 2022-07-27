@@ -26,4 +26,5 @@ var Buttons = map[string]interfaces.Button{
 	"art_rules_2": art_rules.ArtRules2{},
 	// Tour Buttons
 	"get_started": tour.GetStarted{},
+	"roles":       tour.Roles{},
 }
