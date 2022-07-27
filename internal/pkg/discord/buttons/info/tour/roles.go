@@ -15,7 +15,7 @@ type Roles struct {
 
 func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: fmt.Sprintf("%s Important Roles (2/3)", utils.Emoji["blurple_guide"]),
+		Title: fmt.Sprintf("%s Important Roles (2/2)", utils.Emoji["blurple_guide"]),
 		Description: fmt.Sprintf(`
 			Roles identify key members of the community. If you want to find out more about what our main roles stand for and what they do exactly, keep on reading.
 
