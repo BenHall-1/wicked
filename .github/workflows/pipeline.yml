@@ -152,6 +152,6 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag_version.outputs.new_tag }}
-          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          ${{ env.REGISTRY }}/benhall-1:${{ steps.tag_version.outputs.new_tag }}
+          ${{ env.REGISTRY }}/benhall-1:latest
         labels: ${{ steps.meta.outputs.labels }}
