@@ -67,16 +67,23 @@ func (c Command) AppCommand() discordgo.ApplicationCommand {
 
 func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	var (
-		options = i.ApplicationCommandData().Options
-		cmd     = options[0].Name
-		cmdopts = options[0].Options
-		menu    = cmdopts[0].Value
-		channel = i.ApplicationCommandData().Resolved.Channels["channel"]
+		options  = i.ApplicationCommandData().Options
+		cmd      = options[0].Name
+		cmdopts  = options[0].Options
+		menu     = cmdopts[0].Value
+		channels = i.ApplicationCommandData().Resolved.Channels
+		channel  *discordgo.Channel
 	)
+
+	for i := range channels {
+		channel = channels[i]
+		break
+	}
 	switch cmd {
 	case "create":
 		{
 			var embed discordgo.MessageEmbed
+			var components []discordgo.MessageComponent
 			switch menu {
 			case "info":
 				{
@@ -88,7 +95,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						**Socials**:
 						%[1]s Instagram [@TubboLive](https://instagram.com/TubboLive)
 						%[2]s Merch [ShopTubbo.com](https://shoptubbo.com)
-						%[3]s Reddit [@Tubbo](https://www.reddit.com/r/Tubbo)
+						%[3]s Reddit [@Tubbo_](https://www.reddit.com/r/Tubbo_)
 						%[4]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
 						%[4]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
 						%[6]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
@@ -102,6 +109,36 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						- Email (Merch) [support@shoptubbo.com](mailto:support@shoptubbo.com)
 					`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
 					})
+					components = []discordgo.MessageComponent{
+						discordgo.ActionsRow{
+							Components: []discordgo.MessageComponent{
+								discordgo.Button{
+									Style:    discordgo.PrimaryButton,
+									Label:    "Community Rules",
+									CustomID: "community_rules_button",
+									Emoji: discordgo.ComponentEmoji{
+										ID: utils.EmojiIds["rules"],
+									},
+								},
+								discordgo.Button{
+									Style:    discordgo.PrimaryButton,
+									Label:    "Art Rules",
+									CustomID: "art_rules_button",
+									Emoji: discordgo.ComponentEmoji{
+										ID: utils.EmojiIds["rules"],
+									},
+								},
+								discordgo.Button{
+									Style:    discordgo.SuccessButton,
+									Label:    "Get Started",
+									CustomID: "get_started_button",
+									Emoji: discordgo.ComponentEmoji{
+										ID: utils.EmojiIds["guide"],
+									},
+								},
+							},
+						},
+					}
 				}
 			case "staff_guide":
 				{
@@ -109,37 +146,8 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				}
 			}
 			s.ChannelMessageSendComplex(channel.ID, &discordgo.MessageSend{
-				Embeds: []*discordgo.MessageEmbed{&embed},
-				Components: []discordgo.MessageComponent{
-					discordgo.ActionsRow{
-						Components: []discordgo.MessageComponent{
-							discordgo.Button{
-								Style:    discordgo.PrimaryButton,
-								Label:    "Community Rules",
-								CustomID: "community_rules_button",
-								Emoji: discordgo.ComponentEmoji{
-									ID: utils.EmojiIds["rules"],
-								},
-							},
-							discordgo.Button{
-								Style:    discordgo.PrimaryButton,
-								Label:    "Art Rules",
-								CustomID: "art_rules_button",
-								Emoji: discordgo.ComponentEmoji{
-									ID: utils.EmojiIds["rules"],
-								},
-							},
-							discordgo.Button{
-								Style:    discordgo.SuccessButton,
-								Label:    "Get Started",
-								CustomID: "get_started_button",
-								Emoji: discordgo.ComponentEmoji{
-									ID: utils.EmojiIds["guide"],
-								},
-							},
-						},
-					},
-				},
+				Embeds:     []*discordgo.MessageEmbed{&embed},
+				Components: components,
 			})
 			s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
