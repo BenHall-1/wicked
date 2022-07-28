@@ -17,6 +17,15 @@ func (c Command) Description() string {
 	return "Creates break role menu"
 }
 
+func (c Command) AppCommand() discordgo.ApplicationCommand {
+	perms := false
+	return discordgo.ApplicationCommand{
+		Name:              c.Name(),
+		Description:       c.Description(),
+		DefaultPermission: &perms,
+	}
+}
+
 func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseChannelMessageWithSource,
