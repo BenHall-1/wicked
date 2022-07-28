@@ -29,11 +29,10 @@ func (c Command) Options() []*discordgo.ApplicationCommandOption {
 			Description: "Creates a menu",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
-					Type:         discordgo.ApplicationCommandOptionString,
-					Name:         "name",
-					Description:  "The name of the menu",
-					Required:     true,
-					Autocomplete: true,
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "name",
+					Description: "The name of the menu",
+					Required:    true,
 					Choices: []*discordgo.ApplicationCommandOptionChoice{
 						{
 							Name:  "Information Panel",
