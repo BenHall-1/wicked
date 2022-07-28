@@ -90,24 +90,24 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 					embed = utils.MessageEmbed(models.Embed{
 						Title: fmt.Sprintf("%s Tubbo's Pastel Café", utils.Emoji["blurple_guide"]),
 						Description: fmt.Sprintf(`
-						Welcome to Tubbo's Discord! Please use the buttons below to navigate information about the server.
-			
-						**Socials**:
-						%[1]s Instagram [@TubboLive](https://instagram.com/TubboLive)
-						%[2]s Merch [ShopTubbo.com](https://shoptubbo.com)
-						%[3]s Reddit [@Tubbo_](https://www.reddit.com/r/Tubbo_)
-						%[4]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
-						%[4]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
-						%[6]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
-						%[6]s Twitch Alt [@TubboLIVE](https://twitch.tv/TubboLIVE)
-						%[5]s Twitter [@TubboLive](https://twitter.com/TubboLive)
-						%[5]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
-						%[7]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
-			
-						**Contact**:
-						- Email (Business) [tubbobusiness@gmail.com](mailto:tubbobusiness@gmail.com)
-						- Email (Merch) [support@shoptubbo.com](mailto:support@shoptubbo.com)
-					`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
+							Welcome to Tubbo's Discord! Please use the buttons below to navigate information about the server.
+				
+							**Socials**:
+							%[1]s Instagram [@TubboLive](https://instagram.com/TubboLive)
+							%[2]s Merch [ShopTubbo.com](https://shoptubbo.com)
+							%[3]s Reddit [@Tubbo_](https://www.reddit.com/r/Tubbo_)
+							%[4]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
+							%[4]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
+							%[6]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
+							%[6]s Twitch Alt [@TubboLIVE](https://twitch.tv/TubboLIVE)
+							%[5]s Twitter [@TubboLive](https://twitter.com/TubboLive)
+							%[5]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
+							%[7]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
+				
+							**Contact**:
+							- Email (Business) [tubbobusiness@gmail.com](mailto:tubbobusiness@gmail.com)
+							- Email (Merch) [support@shoptubbo.com](mailto:support@shoptubbo.com)
+						`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
 					})
 					components = []discordgo.MessageComponent{
 						discordgo.ActionsRow{
@@ -142,7 +142,24 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				}
 			case "staff_guide":
 				{
-
+					embed = utils.MessageEmbed(models.Embed{
+						Title:       fmt.Sprintf("%s Staff Guide", utils.Emoji["blurple_guide"]),
+						Description: "Welcome to the Café Staff Guide. Please use the buttons below to navigate your way through the guide.",
+					})
+					components = []discordgo.MessageComponent{
+						discordgo.ActionsRow{
+							Components: []discordgo.MessageComponent{
+								discordgo.Button{
+									Style:    discordgo.SuccessButton,
+									Label:    "Get Started",
+									CustomID: "guide_start_button",
+									Emoji: discordgo.ComponentEmoji{
+										ID: utils.EmojiIds["guide"],
+									},
+								},
+							},
+						},
+					}
 				}
 			}
 			s.ChannelMessageSendComplex(channel.ID, &discordgo.MessageSend{

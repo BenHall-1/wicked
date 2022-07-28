@@ -5,6 +5,7 @@ import (
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/art_rules"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/community_rules"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/tour"
+	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/staff_guide"
 	"github.com/benhall-1/wicked/internal/pkg/interfaces"
 )
 
@@ -31,4 +32,13 @@ var Buttons = map[string]interfaces.Button{
 	// Tour Buttons
 	"get_started": tour.GetStarted{},
 	"roles":       tour.Roles{},
+
+	//////////////////////////
+	// Staff Guide Buttons
+	//////////////////////////
+	"guide_start_button": staff_guide.GuideStart{FromMainMenu: true},
+
+	// Menu Buttons
+	"guide_start": staff_guide.GuideStart{},
+	"guide_raid":  staff_guide.Raid{},
 }
