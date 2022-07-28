@@ -118,10 +118,40 @@ jobs:
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
     - 
+      name: Get Next Version
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.0
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dry_run: true
+#     - 
+#       name: Update Pterodactyl File
+#       run: |
+#         sed -i '13 i ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag_version.outputs.new_tag }}' pterodactyl/egg-wicked.json
+#     - 
+#       name: Push Updated Pterodactyl File
+#       uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+#       with:
+#         # The arguments for the `git add` command (see the paragraph below for more info)
+#         # Default: '.'
+#         add: 'pterodactyl/'
+#         author_name: "Tubbo's Pastel Café"
+#         author_email: actions@github.com
+#         default_author: github_actor
+#         message: 'ci(bump): Update Pterodactyl Configuration with new tag'
+#         branch: 'main'
+    -
+      name: Bump version and push tag
+      uses: mathieudutour/github-tag-action@v6.0
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
+    - 
       name: Build & Push Docker Image
       uses: docker/build-push-action@v3
       with:
         context: .
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: |
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag_version.outputs.new_tag }}
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
         labels: ${{ steps.meta.outputs.labels }}
