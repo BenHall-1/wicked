@@ -25,13 +25,15 @@ func (db DiscordBot) SetupHandlers() {
 func (db DiscordBot) RegisterCommands() {
 	var (
 		staffserv = os.Getenv("DISCORD_STAFF_SERVER")
+		mainserv  = os.Getenv("DISCORD_MAIN_SERVER")
 	)
 	for i := range cmds.Commands {
-		c := &discordgo.ApplicationCommand{
-			Name:        cmds.Commands[i].Name(),
-			Description: cmds.Commands[i].Description(),
+		c := cmds.Commands[i].AppCommand()
+		_, err := db.session.ApplicationCommandCreate(db.session.State.User.ID, staffserv, &c)
+		if err != nil {
+			log.Panicf("Cannot create '%v' command: %v", c.Name, err)
 		}
-		_, err := db.session.ApplicationCommandCreate(db.session.State.User.ID, staffserv, c)
+		_, err = db.session.ApplicationCommandCreate(db.session.State.User.ID, mainserv, &c)
 		if err != nil {
 			log.Panicf("Cannot create '%v' command: %v", c.Name, err)
 		}

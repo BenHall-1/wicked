@@ -9,6 +9,8 @@ type Button interface {
 type Command interface {
 	Name() string
 	Description() string
+	Options() []*discordgo.ApplicationCommandOption
+	AppCommand() discordgo.ApplicationCommand
 	Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 }
 

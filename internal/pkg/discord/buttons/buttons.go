@@ -2,7 +2,6 @@ package buttons
 
 import (
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/break_role"
-	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/art_rules"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/community_rules"
 	"github.com/benhall-1/wicked/internal/pkg/discord/buttons/info/tour"
@@ -10,11 +9,15 @@ import (
 )
 
 var Buttons = map[string]interfaces.Button{
+	//////////////////////////
 	// Break Role Buttons
+	//////////////////////////
 	"add_break_role_button":    break_role.Add{},
 	"remove_break_role_button": break_role.Remove{},
+
+	//////////////////////////
 	// Info Buttons
-	"info_button": info.Info{},
+	//////////////////////////
 	// Main Menu Buttons
 	"community_rules_button": community_rules.CommunityRules1{FromMainMenu: true},
 	"art_rules_button":       art_rules.ArtRules1{FromMainMenu: true},
