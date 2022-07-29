@@ -39,6 +39,10 @@ var Buttons = map[string]interfaces.Button{
 	"guide_start_button": staff_guide.GuideStart{FromMainMenu: true},
 
 	// Menu Buttons
-	"guide_start": staff_guide.GuideStart{},
-	"guide_raid":  staff_guide.Raid{},
+	"guide_start":                 staff_guide.GuideStart{},
+	"guide_raid":                  staff_guide.Raid{},
+	"guide_contact":               staff_guide.Contact{},
+	"guide_commands":              staff_guide.Commands{},
+	"guide_community_punishments": staff_guide.CommunityPunishments{},
+	"guide_art_punishments":       staff_guide.ArtPunishments{},
 }

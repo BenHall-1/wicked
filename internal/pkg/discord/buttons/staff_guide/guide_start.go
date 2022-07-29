@@ -58,10 +58,14 @@ func (b GuideStart) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 								Name: "💻",
 							},
 						},
+					},
+				},
+				discordgo.ActionsRow{
+					Components: []discordgo.MessageComponent{
 						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
-							Label:    "Punishments (General)",
-							CustomID: "guide_punishments",
+							Label:    "Punishments (Community)",
+							CustomID: "guide_community_punishments",
 							Emoji: discordgo.ComponentEmoji{
 								Name: "⚔️",
 							},
@@ -69,7 +73,7 @@ func (b GuideStart) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 						discordgo.Button{
 							Style:    discordgo.SecondaryButton,
 							Label:    "Punishments (Art)",
-							CustomID: "guide_punishments_art",
+							CustomID: "guide_art_punishments",
 							Emoji: discordgo.ComponentEmoji{
 								Name: "🎨",
 							},

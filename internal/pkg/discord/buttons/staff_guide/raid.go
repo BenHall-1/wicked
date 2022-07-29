@@ -41,7 +41,7 @@ func (b Raid) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 						discordgo.Button{
 							Style:    discordgo.SuccessButton,
 							Label:    "Main Menu",
-							CustomID: "fake",
+							CustomID: "guide_start",
 							Emoji: discordgo.ComponentEmoji{
 								ID: utils.EmojiIds["guide"],
 							},
