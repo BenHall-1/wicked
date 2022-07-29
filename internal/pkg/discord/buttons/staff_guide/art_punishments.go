@@ -15,9 +15,9 @@ type ArtPunishments struct {
 
 func (b ArtPunishments) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	embed := utils.MessageEmbed(models.Embed{
-		Title: fmt.Sprintf("%s Community Punishments", utils.Emoji["blurple_guide"]),
+		Title: fmt.Sprintf("%s Art Punishments", utils.Emoji["blurple_guide"]),
 		Description: `
-			The following community punishments apply:
+			The following art punishments apply:
 
 			**3 Strikes**:
 			- Edits (They do not count as original art)
