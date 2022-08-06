@@ -18,11 +18,11 @@ func (c Command) Description() string {
 }
 
 func (c Command) AppCommand() discordgo.ApplicationCommand {
-	perms := false
+	var defaultPermissions int64 = discordgo.PermissionManageServer
 	return discordgo.ApplicationCommand{
-		Name:              c.Name(),
-		Description:       c.Description(),
-		DefaultPermission: &perms,
+		Name:                     c.Name(),
+		Description:              c.Description(),
+		DefaultMemberPermissions: &defaultPermissions,
 	}
 }
 

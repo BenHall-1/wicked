@@ -56,12 +56,12 @@ func (c Command) Options() []*discordgo.ApplicationCommandOption {
 }
 
 func (c Command) AppCommand() discordgo.ApplicationCommand {
-	perms := false
+	var defaultPermissions int64 = discordgo.PermissionManageServer
 	return discordgo.ApplicationCommand{
-		Name:              c.Name(),
-		Description:       c.Description(),
-		Options:           c.Options(),
-		DefaultPermission: &perms,
+		Name:                     c.Name(),
+		Description:              c.Description(),
+		DefaultMemberPermissions: &defaultPermissions,
+		Options:                  c.Options(),
 	}
 }
 
