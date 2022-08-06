@@ -15,11 +15,11 @@ type Command struct {
 }
 
 func (c Command) Name() string {
-	return "menu"
+	return "phrase"
 }
 
 func (c Command) Description() string {
-	return "Adds options for menus"
+	return "Adds options for blocked phrases"
 }
 
 func (c Command) Options() []*discordgo.ApplicationCommandOption {
