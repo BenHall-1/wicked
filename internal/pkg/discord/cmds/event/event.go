@@ -36,7 +36,7 @@ func (c Command) Options() []*discordgo.ApplicationCommandOption {
 				}, {
 					Type:        discordgo.ApplicationCommandOptionString,
 					Name:        "time",
-					Description: "The time of the event (HH:MM)",
+					Description: "The time of the event (HH:MM) Time is in UTC",
 					Required:    true,
 				},
 			},
