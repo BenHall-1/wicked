@@ -68,5 +68,8 @@ func GetPhrase(phrase string, guildId string) *BlockedPhrase {
 func AddPhrase(guildId string, creator string, phrase string, regexPhrase string) {
 	query := "INSERT INTO blocked_phrases (guild_id, creator, raw_phrase, regex_phrase) VALUES ('%s', '%s', '%s', '%s')"
 	query = fmt.Sprintf(query, guildId, creator, phrase, regexPhrase)
-	db.Database.Exec(query)
+	if _, err := db.Database.Exec(query); err != nil {
+		fmt.Println("Failed to add phrase: ", err)
+	}
+
 }
