@@ -103,10 +103,10 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 					Flags: 1 << 6,
 					Content: fmt.Sprintf("Created the new event! Use the below text to setup the sticky message: \n```\n %v \n```",
 						fmt.Sprintf(`-sm -d 600s **Want to be notified for the next public chat?**
-[https://discord.com/events/%s/%s](Click here) to get notified!
+[Click here](https://discord.com/events/%s/%s) to get notified!
 
 **Why do some users have '#' and '##' in their name?**
-Please see [https://discord.com/channels/472883504217063466/929655565364375602/1005430414384582737](this) message for more information!
+Please see [this](https://discord.com/channels/472883504217063466/929655565364375602/1005430414384582737) message for more information!
 
 **How can I contact a mod? I cannot see any other channels**
 - Please DM any of the users with the <@&866451599270084639> or <@&934372109717737523> roles
