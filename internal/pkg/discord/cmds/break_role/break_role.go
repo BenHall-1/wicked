@@ -46,7 +46,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 							Emoji: discordgo.ComponentEmoji{
 								ID: "981140032658223124",
 							},
-							CustomID: "break_role_button",
+							CustomID: "add_break_role_button",
 						},
 						discordgo.Button{
 							Style: discordgo.DangerButton,
