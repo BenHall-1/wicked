@@ -83,6 +83,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				ScheduledStartTime: &startTime,
 				ScheduledEndTime:   &endTime,
 				EntityType:         discordgo.GuildScheduledEventEntityTypeExternal,
+				PrivacyLevel:       discordgo.GuildScheduledEventPrivacyLevelGuildOnly,
 				EntityMetadata: &discordgo.GuildScheduledEventEntityMetadata{
 					Location: fmt.Sprintf("<#%s>", pubchat),
 				},
