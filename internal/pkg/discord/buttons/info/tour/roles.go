@@ -26,7 +26,7 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			The Barista team is here to manage the server. This is our Moderation Team.
 
 			%s <@&934372109717737523>
-			The Janitor team is members of teh team that have been newly added to the team. 
+			The Janitor team is members of the team that have been newly added to the team. 
 
 			%s <@&872924363807158353>
 			The Latte Artists are here to keep an eye on the art channels and make sure that art is not stolen. 
