@@ -23,10 +23,10 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			This is Tubbo.
 			
 			%s <@&866451599270084639>
-			The Barista team is here to manage the server. These are our Administrators.
+			The Barista team is here to manage the server. This is our Moderation Team.
 
 			%s <@&934372109717737523>
-			The Janitor team is here to keep the community a safer and comfortable space at any given time. These are our Moderators. 
+			The Janitor team is members of teh team that have been newly added to the team. 
 
 			%s <@&872924363807158353>
 			The Latte Artists are here to keep an eye on the art channels and make sure that art is not stolen. 
