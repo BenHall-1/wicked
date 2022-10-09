@@ -21,7 +21,8 @@ func (b Contact) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 
 			- Business: tubbobusiness@gmail.com
 			- Merch: support@shoptubbo.com
-			- Tubnet: *N/A - Discord Link Coming Soon*
+			- Tubnet Discord: [discord.gg/tubnetgg](discord.gg/tubnetgg)
+			- Tubnet Email: mike@tubnet.gg
 		`,
 	})
 

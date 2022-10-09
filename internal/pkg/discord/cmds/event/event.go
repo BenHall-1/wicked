@@ -77,7 +77,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 					},
 				})
 			}
-			endTime := startTime.Add(time.Hour * 24)
+			endTime := startTime.Add(time.Hour * 48)
 			event, err := s.GuildScheduledEventCreate(i.GuildID, &discordgo.GuildScheduledEventParams{
 				Name:               "Public TubChat!",
 				ScheduledStartTime: &startTime,
