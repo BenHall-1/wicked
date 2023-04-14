@@ -108,6 +108,9 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 **Why do some users have '#' and '##' in their name?**
 Please see [this](https://discord.com/channels/472883504217063466/929655565364375602/1005430414384582737) message for more information!
 
+**Need to report a message?**
+You can report a message by reacting with <:report:868243118808530964>!
+
 **How can I contact a mod? I cannot see any other channels**
 - Please DM any of the users with the <@&866451599270084639> or <@&934372109717737523> roles
 - The only other public channel is <#866444906142892033>`, i.GuildID, event.ID),
