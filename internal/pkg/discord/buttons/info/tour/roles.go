@@ -23,14 +23,11 @@ func (b Roles) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			This is Tubbo.
 			
 			%s <@&866451599270084639>
-			The Barista team is here to manage the server. This is our Moderation Team.
+			The Staff team is here to manage the server. This is our Moderation Team.
 
 			%s <@&934372109717737523>
-			The Janitor team is members of the team that have been newly added to the team. 
-
-			%s <@&872924363807158353>
-			The Latte Artists are here to keep an eye on the art channels and make sure that art is not stolen. 
-		`, utils.Emoji["badge_owner"], utils.Emoji["badge_admin"], utils.Emoji["badge_mod"], utils.Emoji["badge_artist"]),
+			The Trial Staff team is members of the team that have been newly added to the team. 
+		`, utils.Emoji["badge_owner"], utils.Emoji["badge_admin"], utils.Emoji["badge_mod"]),
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 		Type: discordgo.InteractionResponseUpdateMessage,
