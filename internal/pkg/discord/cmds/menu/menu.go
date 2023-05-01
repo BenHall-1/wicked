@@ -105,8 +105,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 							%[7]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
 				
 							**Contact**:
-							- Email (Business) [tubbobusiness@gmail.com](mailto:tubbobusiness@gmail.com)
-							- Email (Merch) [support@shoptubbo.com](mailto:support@shoptubbo.com)
+							- Email (Business) __tubbobusiness@gmail.com__
 						`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
 					})
 					components = []discordgo.MessageComponent{
