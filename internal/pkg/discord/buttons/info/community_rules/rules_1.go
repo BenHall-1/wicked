@@ -25,10 +25,10 @@ func (b CommunityRules1) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 			Self promotion of any kind is not allowed.
 
 			**No Media in Art**
-			Media is not allowed in <#931829057895677984>. Cosplays & Photography is fine.
+			Media is not allowed in <#866444906142892033>. Cosplays & Photography is fine.
 
 			**No Pinging Creators**
-			Do not ping Tubbo or any other creators you see in the server. Refrain from pinging any staff unless immediate help is required. If you need to report a message, react with <:report:810042563008135169>.
+			Do not ping Tubbo or any other creators you see in the server. Refrain from pinging any staff unless immediate help is required. If you need to report a message, react with <:report:868243118808530964>.
 		`,
 	})
 	t := discordgo.InteractionResponseUpdateMessage
