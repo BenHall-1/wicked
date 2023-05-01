@@ -94,19 +94,18 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				
 							**Socials**:
 							%[1]s Instagram [@TubboLive](https://instagram.com/TubboLive)
-							%[2]s Merch [ShopTubbo.com](https://shoptubbo.com)
-							%[3]s Reddit [@Tubbo_](https://www.reddit.com/r/Tubbo_)
-							%[4]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
-							%[4]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
-							%[6]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
-							%[6]s Twitch Alt [@TubboLIVE](https://twitch.tv/TubboLIVE)
-							%[5]s Twitter [@TubboLive](https://twitter.com/TubboLive)
-							%[5]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
-							%[7]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
+							%[2]s Reddit [@Tubbo_](https://www.reddit.com/r/Tubbo_)
+							%[3]s Spotify [Tubbo](https://open.spotify.com/user/p04neko25tv0jw7p24si4pcis)
+							%[3]s Spotify (Artist) [Tubbo](https://open.spotify.com/artist/4B1kkhDbhSyiS3VDgbKV2T)
+							%[5]s Twitch [@Tubbo](https://twitch.tv/Tubbo)
+							%[5]s Twitch Alt [@TubboLIVE](https://twitch.tv/TubboLIVE)
+							%[4]s Twitter [@TubboLive](https://twitter.com/TubboLive)
+							%[4]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
+							%[6]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
 				
 							**Contact**:
 							- Email (Business) __tubbobusiness@gmail.com__
-						`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_merch"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
+						`, utils.Emoji["blurple_instagram"], utils.Emoji["blurple_reddit"], utils.Emoji["blurple_spotify"], utils.Emoji["blurple_twitch"], utils.Emoji["blurple_twitter"], utils.Emoji["blurple_youtube"]),
 					})
 					components = []discordgo.MessageComponent{
 						discordgo.ActionsRow{
