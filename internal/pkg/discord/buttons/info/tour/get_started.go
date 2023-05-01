@@ -22,8 +22,8 @@ func (b GetStarted) Handle(s *discordgo.Session, i *discordgo.InteractionCreate)
 			Any questions? Feel free to contact one of our team members!
 
 			%s **Subscribing**
-			Subscribing is a way of gaining access to the server. This will grant you the <@&790351230865506325> role.
-			You can subscribe by [Clicking Here](https://www.twitch.tv/products/orphictubbo).
+			Subscribing is a way of gaining access to the server. This will grant you the <@&1078013927931269291> role.
+			You can subscribe by [Clicking Here](https://www.twitch.tv/subs/tubbo).
 
 			%s **Boosting**
 			Boosting is one way to get access to the rest of the server. This will grant you the <@&620374536625324042> role.
