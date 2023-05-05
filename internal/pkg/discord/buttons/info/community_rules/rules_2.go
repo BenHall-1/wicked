@@ -27,7 +27,10 @@ func (b CommunityRules2) Handle(s *discordgo.Session, i *discordgo.InteractionCr
 			Spamming by sending repetitive messages, emojis, images, mentions or reactions is not tolerated in this server or in DMs.
 
 			**English Only**
-			We require all chats to be english only for our team to be able to moderate the server safely.
+			We require all chats and server nicknames to be in English / include English characters only. This is to ensure that our team is able to safely moderate the server. 
+			
+			**VC Rules**
+			All server rules apply to the voice channels. To join a voice chat, you must be of server level 5 or above. To stream and/or turn on your camera, you need to reach level 10.
 		`,
 	})
 	s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
