@@ -24,17 +24,20 @@ func (b ArtPunishments) Handle(s *discordgo.Session, i *discordgo.InteractionCre
 			- PicCrew
 
 			**3 Strikes**:
+			- Edits (They do not count as original art)
+			
+			**5 Strikes**:
 			- Gacha (Second Offence)
 			- PicCrew (Second Offence)
 			- Media
-			- Edits (They do not count as original art)
+			- Reposts (With Credit) (Other people's art)
 			
-			**6 Strikes**:
+			**8 Strikes**:
 			- Tracing Art
 			- Bases (With No Credit)
 
-			**9 Strikes**:
-			- Reposts (Other people's art)
+			**12 Strikes**:
+			- Reposts (With No Credit) (Other people's art)
 			
 			**Ban**:
 			- Art Theft
