@@ -26,16 +26,18 @@ func (b CommunityPunishments) Handle(s *discordgo.Session, i *discordgo.Interact
 
 			**3 Strikes**:
 			- Copypasta
-			- Toxicity (After 1 Strike)
 			
-			**6 Strikes**:
+			**5 Strikes**:
+			- Toxicity (After 1 Strike)
 			- Soundboards / Mic Abuse
 			- Asking for Nitro / Money
 			- Self Promo
+			
+			**8 Strikes**:
 			- Moderate Toxicity
 			- Slight NSFW
 
-			**9 Strikes**:
+			**12 Strikes**:
 			- Heavy Mic Abuse
 			- Staff Disrespect
 			- Moderate NSFW
