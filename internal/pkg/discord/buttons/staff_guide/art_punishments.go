@@ -30,7 +30,6 @@ func (b ArtPunishments) Handle(s *discordgo.Session, i *discordgo.InteractionCre
 			- Gacha (Second Offence)
 			- PicCrew (Second Offence)
 			- Media
-			- Reposts (With Credit) (Other people's art)
 			
 			**8 Strikes**:
 			- Tracing Art
