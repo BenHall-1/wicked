@@ -88,7 +88,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			case "info":
 				{
 					embed = utils.MessageEmbed(models.Embed{
-						Title: fmt.Sprintf("%s Tubbo's Pastel Café", utils.Emoji["blurple_guide"]),
+						Title: fmt.Sprintf("%s Tubbo's Discord", utils.Emoji["blurple_guide"]),
 						Description: fmt.Sprintf(`
 							Welcome to Tubbo's Discord! Please use the buttons below to navigate information about the server.
 				
@@ -102,6 +102,8 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 							%[4]s Twitter [@TubboLive](https://twitter.com/TubboLive)
 							%[4]s Twitter Alt [@TubboTWO](https://twitter.com/TubboTWO)
 							%[6]s YouTube [@Tubbo](https://www.youtube.com/Tubbo)
+							
+							TubNet: [discord.gg/tubnet](https://discord.gg/tubnet)
 				
 							**Contact**:
 							- Email (Business) __tubbobusiness@gmail.com__
@@ -142,7 +144,7 @@ func (c Command) Handle(s *discordgo.Session, i *discordgo.InteractionCreate) {
 				{
 					embed = utils.MessageEmbed(models.Embed{
 						Title:       fmt.Sprintf("%s Staff Guide", utils.Emoji["blurple_guide"]),
-						Description: "Welcome to the Café Staff Guide. Please use the buttons below to navigate your way through the guide.",
+						Description: "Welcome to the Server Staff Guide. Please use the buttons below to navigate your way through the guide.",
 					})
 					components = []discordgo.MessageComponent{
 						discordgo.ActionsRow{
